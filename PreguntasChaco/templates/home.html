@@ -9,7 +9,7 @@
                   <a href="{% url 'logout' %}" type="submit" class="btn btn-outline-light">Salir</a>
                 {% else %}
                   <a type="submit"class="btn btn-outline-light" href="{% url 'login' %}">Ingresar</a>
-                  <a type="button" class="btn btn-light text-dark" href="{% url 'register' %}">Registrate</a>
+                  <a type="button" class="btn btn-light text-dark" href="{% url 'usuarios:register' %}">Registrate</a>
                 {% endif %}
               </span>
         </div>

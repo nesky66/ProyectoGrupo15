@@ -8,7 +8,7 @@ def registerUser(request):
         if form.is_valid():
             username = form.cleaned_data['username']
             messages.success(request,f'Usuario {username} creado con exito')
-            return redirect('home')
+            return redirect('login')
     else:
         form = UserRegisterForm()
 

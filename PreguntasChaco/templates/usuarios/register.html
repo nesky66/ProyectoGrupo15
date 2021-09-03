@@ -3,26 +3,39 @@
 
   
 {% block contenido %}
-			</div>
+				</div>
 		</nav>
 
-
-
-		  <div class="login-wrap">
-			<div class="login-html">
-                <label for="tab-1" class="tab">Ingresá</label>
-                <div>
-                <form method="POST">
-                    {%csrf_token %}
-                    {{form.as_p}}
-                    
-                      <button type="submit" class="btn btn-primary">Submit</button>
+        <section class="ftco-section">
+			<div class="row justify-content-center">
+				<div class="col-md-12 col-lg-10">
+					<div class="wrap d-md-flex">
+						<div class="text-wrap p-4 p-lg-5 text-center d-flex align-items-center align-content-center order-md-last">
+								<div class="text w-100">
+									<h2>Bienvenido</h2>
+									<p>Ya tienes una cuenta?</p>
+									<a href="{% url 'login' %}" class="btn btn-white btn-outline-white">Ingresá</a>
+							</div>
+			      		</div>
+						<div class="login-wrap p-4 p-lg-5">
+			      	<div class="d-flex">
+			      		<div class="w-100">
+			      			<h3 class="mb-4">Registrate</h3>
+			      		</div>
+			      	</div>
+                <form method="POST" class="signup-form">
+                 {% csrf_token %}
+                 {{form.as_p}}
+                 <div class="form-group">
+                    <button type="submit" id="submit" class="form-control btn btn-primary submit px-3">Registrate</button>
+                </div>
                 </form>
+              <p>Ya tienes una cuenta? <a data-toggle="tab" href="{% url 'login' %}">Inicia Sesion</a></p>
             </div>
-			</div>
-		  </div>
+          </div>
+        </div>
+      </div>
+    </section>
 		
-
-
 	  
 	    {% endblock contenido %}

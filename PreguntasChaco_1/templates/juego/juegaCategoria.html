@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+    
+     <div class="navbar-text"></div>
+        <span class="navbar-text">{{user.username}}</span>
+         <a href="{% url 'logout' %}" type="submit" class="btn btn-outline-light">Salir</a>
+            
+     </div>
+</nav>
+
+<!--  <div style= "background-color: seagreen;" class="container">
+     
+    <div class="jumbotron my-4">
+        <h3><div style="font-weight: bolder;color: olivedrab;">CATEGORIA: {{catNom.nombre}}</div></h3>
+        <h4> INTENTOS: {{intent}}</h2>
+
+        <h4> PUNTUACION: {{puntuc}}</h2> 
+
+        <h2>
+            <p style="color: darkmagenta;">{{pregunta}}</p>
+            
+        </h2>
+
+      
+        
+
+        {% for res in respuestas %}
+        <li>
+    
+        <a href="{% url 'juego:validar' op catNom.id res correcta intent puntuc %}">
+            <button  id="{{res}}" onclick="lala(value)" value="{{res}}">
+              {{res}}
+            </button>
+        </a>
+
+        </li>
+        </br>
+
+        {% endfor%}
+
+        -->
+<section class="ftco-section">
+            <div class="row justify-content-center">
+                <div class="col-md-12 col-lg-10 ">
+                    <div class="wrap p-4 p-lg-5 d-md-flex justify-content-center ">
+                        <div class="align-items-center text-center">
+                            
+                            <h3 style="font-weight: bolder;color: olivedrab;">CATEGORIA: {{catNom.nombre}}</h3>
+                            <h4> INTENTOS: {{intent}}</h2>
+                            <h4> PUNTUACION: {{puntuc}}</h2> 
+
+                            <h2><p>{{pregunta}}</p></h2>
+<div  style="text-align: center;font-weight: bolder;font-size: x-large ;color:darkorange ;" id="mens"></div>
+                            <div class="d-grid gap-2">
+                                {% for res in respuestas %}
+                                
+                                 <a href="{% url 'juego:validar' op catNom.id res correcta intent puntuc %}">
+                                    <button  style="font-size: medium; font-weight: bolder;color:black;background-color: cornsilk;" id="{{res}}" onclick="lala(value)" value="{{res}}" class="btn btn-primary btn-lg btn-block" type="button">
+                                        {{res}}
+                                    </button>
+                                </a>
+
+                                {% endfor%}
+                            </div>
+
+                          <!--    <a href="">
+                                <button disabled id="cont" onclick="submit" type="button" class="btn btn-primary">Continua</button>
+                            </a> 
+                 -->
+                            
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+              
+
+       <!--  <a href="{% url 'juego:juegacat'  op catNom.id  puntuc intent %}">
+           <button disabled id="cont" onclick="">Continua</button>
+        </a> 
+        
+      
+
+        
+        <div  style="text-align: center;font-weight: bolder;font-size: xx-large ;color:blue ;" id="mens"></div>
+
+        </div>
+
+        </div>
+ -->
+    
+
+       <script type="text/javascript">
+           var inte = parseInt({{intent}})
+            var punt = parseInt({{puntuc}})
+        
+    
+        function lala(val) {
+        
+        
+
+            if(val==="{{correcta}}"){
+             document.getElementById('mens').innerHTML="CORRECTO !!!";
+             document.getElementById(val).style.color = "green";
+             punt += 10;
+             // document.getElementById('puntuacion').innerHTML=punt;
+            }
+            else{
+            document.getElementById('mens').innerHTML="¡ INCORRECTO !";
+            document.getElementById(val).style.color = "red";
+            inte--;
+
+            
+            
+                    
+            // document.getElementById('intentos').innerHTML=inte; 
+           
+            }
+                        
+            document.getElementById('cont').disabled = false;
+
+            
+       
+ 
+        }
+
+       
+       
+        
+    
+</script>
+
+
+
+
+
+
+
+
+
+ {% endblock contenido %}

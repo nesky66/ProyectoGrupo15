@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+  
+
+ {% block contenido %}
+    
+ <div class="navbar-text"></div>
+        <span class="navbar-text">{{user.username}}</span>
+         <a href="{% url 'logout' %}" type="submit" class="btn btn-outline-light">Salir</a>
+            
+     </div>
+  
+</nav>
+
+
+<!-- {% for c in categorias%}
+
+   <a class="btn btn-success" href="{% url 'juego:juegacat' op c.id  puntuac intent   %}">
+      <p>{{c.nombre}}</p>
+   </a>
+   <br>
+
+{% endfor %}
+ -->
+ <section class="ftco-section">
+         <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-10 ">
+               <div class="wrap p-4 p-lg-5 d-md-flex justify-content-center ">
+                  <div class="align-items-center text-center">
+
+
+                  {% if op == 1 %}
+                     <h2>Elegí una categoría</h2>
+                           
+                     {% for c in categorias%}
+                           
+                        <a class="btn-outline-primary" href="{% url 'juego:juegacat' op c.id  puntuac intent %}">
+                         
+                           <label  style= "font-style: oblique;font-weight:bold; " class="btn btn-outline-primary" for="btn-check-outlined">{{c.nombre}}</label>
+                        </a>
+
+                     {% endfor %}
+
+                  {% endif %}
+                     
+                  {% if op == 2 %}
+
+                     <h2>¿Cuánto sabes del chaco?</h2>
+                       <a class="btn-outline-primary" href="{% url 'juego:juegacat' op 0  puntuac intent %}">
+                          
+                           <label  style= "font-style: oblique;font-weight:bold; " class="btn btn-outline-primary" for="btn-check-outlined">EMPECEMOS</label>
+                        </a>
+
+
+                  {% endif %}
+                           
+                  </div>
+               </div>
+            </div>
+         </div>    
+      </section>
+
+{% endblock contenido %}

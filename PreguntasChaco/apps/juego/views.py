@@ -9,11 +9,6 @@ from django.db.models.aggregates import Count
 from random import randint, shuffle
 
 
-
-
-
-
-
 @login_required
 def pagJuego(request):
     return render(request,'juego/jugar.html')
@@ -77,7 +72,6 @@ def randomCat():
 
 def juegaCategoria(request,op,cat,pun,inte):
 
-    
 
     if op == 2:
 
@@ -104,7 +98,21 @@ def validar(request,op,cat,selec,pregunta,itos,ptos):
         itos = itos - 1
 
     if itos < 0:
+
         context['puntos']= ptos
+      
+        
+
+
+
+
+
+
+
+
+
+
+
         return render(request,'juego/finJuego.html',context)
     else:
         context = leeBase(cat)
@@ -115,5 +123,6 @@ def validar(request,op,cat,selec,pregunta,itos,ptos):
     # return render(request,'juego/juegaCategoria.html',context)
 
         return juegaCategoria(request,op,cat,ptos,itos)
+
 
 

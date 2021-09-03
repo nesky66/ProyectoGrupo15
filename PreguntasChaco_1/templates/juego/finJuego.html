@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+{% block contenido %}
+	<div class="navbar-text"></div>
+        <span class="navbar-text">{{user.username}}</span>
+         <a href="{% url 'logout' %}" type="submit" class="btn btn-outline-light">Salir</a>
+            
+     </div>
+</nav>
+
+
+
+
+
+	<h1>se acabo !!</h1>
+	<h2 style="color: darkorange;">puntaje: {{puntos}}</h2>
+
+	<a href="{% url 'juego:jugar'%}">Otra partida ?</a>
+	<a href="{% url 'home'%}">Salir</a>
+
+
+
+
+{% endblock contenido %}
+</body>
+</html>
