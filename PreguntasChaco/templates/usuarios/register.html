@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+  
+{% block contenido %}
+			</div>
+		</nav>
+
+
+
+		  <div class="login-wrap">
+			<div class="login-html">
+                <label for="tab-1" class="tab">Ingresá</label>
+                <div>
+                <form method="POST">
+                    {%csrf_token %}
+                    {{form.as_p}}
+                    
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+			</div>
+		  </div>
+		
+
+
+	  
+	    {% endblock contenido %}
