@@ -23,12 +23,12 @@
 
 <p>{{jugador.username}}</p>
 
-	<h1>se acabo !!</h1>
+	<h1 style="color: green;">FIN DE JUEGO {{user.username}} !!</h1>
 	<h2 style="color: darkorange;">puntaje: {{puntos}}</h2>
 
-	<a href="{% url 'juego:jugar'%}">Otra partida ?</a>
-	<a href="{% url 'home'%}">Salir</a>
-	<
+	<a class = "btn btn-success" href="{% url 'juego:jugar'%}">Otra partida ?</a>
+	<a class = "btn btn-success" href="{% url 'home'%}">Salir</a>
+	
 
 
 
