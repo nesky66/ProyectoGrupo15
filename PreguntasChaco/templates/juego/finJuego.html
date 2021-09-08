@@ -23,8 +23,9 @@
 
 <p>{{jugador.username}}</p>
 
-	<h1 style="color: green;">FIN DE JUEGO {{user.username}} !!</h1>
+	<h1 style="color: green;">FIN DE JUEGO {{user.username}} !!</h1><br>
 	<h2 style="color: darkorange;">puntaje: {{puntos}}</h2>
+	<h2 style="color: darkorange;">HI-SCORE: {{user.score}}</h2>
 
 	<a class = "btn btn-success" href="{% url 'juego:jugar'%}">Otra partida ?</a>
 	<a class = "btn btn-success" href="{% url 'logout'%}">Salir</a>

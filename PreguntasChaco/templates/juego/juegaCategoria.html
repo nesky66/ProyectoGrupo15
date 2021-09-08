@@ -9,7 +9,7 @@
             
      </div>
 </nav>
-
+<div class="bg-image2">
 <!--  <div style= "background-color: seagreen;" class="container">
      
     <div class="jumbotron my-4">
@@ -41,7 +41,7 @@
         {% endfor%}
 
         -->
-<section class="ftco-section">
+<section class="">
             <div class="row justify-content-center">
                 <div class="col-md-12 col-lg-10 ">
                     <div class="wrap p-4 p-lg-5 d-md-flex justify-content-center ">
@@ -51,8 +51,8 @@
                             <h4> INTENTOS: {{intent}}</h2>
                             <h4> PUNTUACION: {{puntuc}}</h2> 
 
-                            <h2><p>{{pregunta}}</p></h2>
-                            <div  style="text-align: center;font-weight: bolder;font-size: x-large ;color:darkorange ;" id="mens"></div>
+                            <h4 class="bg-primary"><p>{{pregunta}}</p></h4>
+                            
                             <div class="d-grid gap-2">
                                 {% for res in respuestas %}
                                 
@@ -64,6 +64,7 @@
 
                                 {% endfor%}
                             </div>
+                            <div  style="text-align: center;font-weight: bolder;font-size: x-large ;color:darkorange ;" id="mens"></div>
 
                           <!--    <a href="">
                                 <button disabled id="cont" onclick="submit" type="button" class="btn btn-primary">Continua</button>
@@ -138,7 +139,7 @@
 </script>
 
 
-
+</div>
 
 
 

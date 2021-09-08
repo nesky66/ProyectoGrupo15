@@ -86,41 +86,34 @@ def juegaCategoria(request,op,cat,pun,inte):
     return render(request,'juego/juegaCategoria.html',context)
 
 def validar(request,op,cat,selec,pregunta,itos,ptos):
+    usuario = request.user
+    hi = usuario.score
 
-   
     context = {}
-
     if selec == pregunta:
         ptos = ptos + 10
     else:
-        
         
         itos = itos - 1
 
     if itos < 0:
 
+
+
         context['puntos']= ptos
+        if hi < ptos:
+            usuario.score = ptos
+            usuario.save()
       
-        
-
-
-
-
-
-
-
-
-
-
-
         return render(request,'juego/finJuego.html',context)
     else:
         context = leeBase(cat)
         context['op'] = op
         context['intent'] = itos
         context['puntuc'] = ptos
+        context
 
-    # return render(request,'juego/juegaCategoria.html',context)
+       # return render(request,'juego/juegaCategoria.html',context)
 
         return juegaCategoria(request,op,cat,ptos,itos)
 
