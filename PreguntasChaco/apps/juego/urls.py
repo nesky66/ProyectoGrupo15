@@ -8,6 +8,7 @@ urlpatterns = [
     path('jugar2/<int:op>', views.seleccionaJuego, name='selecjuego'),
     path('jugarCat/<int:op>/<int:cat>/<int:pun>/<int:inte>', views.juegaCategoria, name='juegacat'),
     path('valida/<int:op>/<int:cat>/<selec>/<pregunta>/<int:itos>/<int:ptos>', views.validar, name='validar'),
+    path('ranking/',views.rankingPos,name='ranking')
 
    
 ]

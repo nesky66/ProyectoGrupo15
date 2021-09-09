@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+  
+{% block contenido %}
+
+  <div class="navbar-text"></div>
+        <span class="navbar-text">{{user.username}}</span>
+         <a href="{% url 'logout' %}" type="submit" class="btn btn-outline-light">Salir</a>
+            
+     </div>
+</nav>
+
+<table>
+	{% for s in jugadores %}
+	<tr>
+	<td>
+		{{s.username}}
+	</td>
+	<td>
+		{{s.score}}
+	</td>
+	</tr>
+	{% endfor%}
+
+
+</table>
+
+
+
+{% endblock %}

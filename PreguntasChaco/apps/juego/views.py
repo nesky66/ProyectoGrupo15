@@ -7,6 +7,7 @@ from apps.preguntas.models import Pregunta
 from .models import Juego
 from django.db.models.aggregates import Count
 from random import randint, shuffle
+from operator import itemgetter, attrgetter
 
 
 @login_required
@@ -117,5 +118,26 @@ def validar(request,op,cat,selec,pregunta,itos,ptos):
 
         return juegaCategoria(request,op,cat,ptos,itos)
 
+
+def rankingPos(request):
+    contexto = {}
+    
+    listatop = Usuario.objects.filter(is_superuser = 0)
+    tam = len(listatop)
+    print(tam)
+    
+    sorted(listatop)
+    
+    if tam<10:
+        longitud = tam
+    else:
+        longitud = 10
+    
+    seleccion = listatop[:longitud]
+
+    contexto['jugadores'] = seleccion
+    
+
+    return render(request,'juego/ranking.html',contexto)
 
 
