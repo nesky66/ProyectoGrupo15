@@ -124,16 +124,16 @@ def rankingPos(request):
     
     listatop = Usuario.objects.filter(is_superuser = 0)
     tam = len(listatop)
-    print(tam)
     
-    sorted(listatop)
     
+    orden = sorted(listatop)
+   
     if tam<10:
         longitud = tam
     else:
         longitud = 10
     
-    seleccion = listatop[:longitud]
+    seleccion = orden[:longitud]
 
     contexto['jugadores'] = seleccion
     

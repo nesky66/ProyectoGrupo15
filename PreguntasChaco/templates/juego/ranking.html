@@ -7,25 +7,53 @@
   <div class="navbar-text"></div>
         <span class="navbar-text">{{user.username}}</span>
          <a href="{% url 'logout' %}" type="submit" class="btn btn-outline-light">Salir</a>
+          <link href="{% static 'css/fin.css' %}" rel="stylesheet">
             
      </div>
 </nav>
 
-<table>
-	{% for s in jugadores %}
-	<tr>
-	<td>
-		{{s.username}}
-	</td>
-	<td>
-		{{s.score}}
-	</td>
-	</tr>
-	{% endfor%}
 
 
-</table>
+
+<section>
+  <!--for demo wrap-->
+  <h1>RANKING TOP 10</h1>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>jugador</th>
+          <th>mejor puntaje</th>
+          <th>miembro desde</th>
+          
+         
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+      	{% for s in jugadores %}
+        <tr>
+          <td>{{s.username}}</td>
+          <td>{{s.score}}</td>
+          <td>{{s.date_joined}}</td>
+          
+        
+        </tr>
+        	{% endfor%}
+       
+      </tbody>
+    </table>
+  </div>
+</section>
 
 
+<!-- follow me template -->
+<div class="made-with-love">
+  Made with
+  <i>♥</i> Chacuntados</a>
+</div>
 
 {% endblock %}

@@ -7,4 +7,4 @@ class Usuario(AbstractUser):
 
 	def __gt__(self,otro):
 
-		return self.username > otro.username
+		return self.score < otro.score
